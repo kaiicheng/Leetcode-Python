@@ -1,3 +1,5 @@
+# characteristic of binary search tree
+
 from typing import Optional
 
 # Definition for a binary tree node.
@@ -9,36 +11,44 @@ class TreeNode:
 
 class Solution:
     def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
-        
-        ls = []
-        ans = []
-        def check(node, val):
-            # print("node: ", node)
 
-            if node is None:
-                return
-            else:
-                if node.val == val:
-                    ls.append(node)
-                    ans.append(node)
-                    return
-                else:
-                    ls.append(node)
+        # characteristic of binary search tree
+        while root is not None and root.val != val:
+            root = root.left if val < root.val else root.right
+        return root
 
-            check(node.left, val)
-            check(node.right, val)
+
+
+        # reursion
+
+        # ls = []
+        # ans = []
+        # def check(node, val):
+        #     # print("node: ", node)
+
+        #     if node is None:
+        #         return
+        #     else:
+        #         if node.val == val:
+        #             ls.append(node)
+        #             ans.append(node)
+        #             return
+        #         else:
+        #             ls.append(node)
+
+        #     check(node.left, val)
+        #     check(node.right, val)
         
-        check(root, val)
-        # print("ls: ", ls)
-        # print("ans: ", ans)
-        # print("---end---")
-        if ans == []:
-            # print("1!")
-            return None
-        else:
-            # print("2!")
-            return ans[0]
-        
+        # check(root, val)
+        # # print("ls: ", ls)
+        # # print("ans: ", ans)
+        # # print("---end---")
+        # if ans == []:
+        #     # print("1!")
+        #     return None
+        # else:
+        #     # print("2!")
+        #     return ans[0]
 def main(root, val):
     result = Solution()
     print(result.searchBST(root, val))
