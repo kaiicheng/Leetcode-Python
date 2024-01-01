@@ -7,17 +7,25 @@ class Solution:
         dp = [float('inf')] * (amount + 1)
         dp[0] = 0
         
-        for coin in coins:
-            for x in range(coin, amount + 1):
-                dp[x] = min(dp[x], dp[x - coin] + 1)
-                print("dp: ", dp)
+        # for coin in coins:
+        #     for x in range(coin, amount + 1):
+        #         # print("coin, x: ", coin, x)
+        #         dp[x] = min(dp[x], dp[x - coin] + 1)
+        #         # print("dp: ", dp)
+
+        # alternative
+        for x in range(1, amount + 1):
+            for coin in coins:
+                if coin <= x:
+                    # print("coin, x: ", coin, x)
+                    dp[x] = min(dp[x], dp[x - coin] + 1)
+                    # print("dp: ", dp)
 
         # return dp[amount] if dp[amount] != float('inf') else -1 
         if dp[amount] != float('inf'):
             return dp[amount]
         else:
             return -1
-
 
 
         # dynamic programming - top down
