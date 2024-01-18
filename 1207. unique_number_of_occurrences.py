@@ -1,22 +1,15 @@
 from typing import List
+from collections import Counter
 
 class Solution:
     def uniqueOccurrences(self, arr: List[int]) -> bool:
         
-        di = {}
-        for i in range(len(arr)):
-            if arr[i] not in di:
-                di[arr[i]] = 1
+        c = Counter(arr)
+        ls = []
+        for i in c:
+            if c[i] not in ls:
+                ls.append(c[i])
             else:
-                di[arr[i]] += 1
-        print("di: ", di)
-
-        ls = list(di.values())
-        print("ls: ", ls)
-        ls.sort()
-
-        for i in range(len(ls) - 1):
-            if ls[i] == ls[i + 1]:
                 return False
         return True
 
