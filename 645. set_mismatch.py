@@ -2,6 +2,7 @@ from typing import List
 
 class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
+
         nums.sort()
         print("nums: ", nums)
         dict = {}
@@ -43,9 +44,5 @@ def main(nums):
     print(result.findErrorNums(nums))
 
 if __name__== "__main__" :
-    # nums = [1,2,2,4]
-    # nums = [1, 1]
-    # nums = [2,2]
-    # nums = [3,2,3,4,6,5]
-    nums = [1,5,3,2,2,7,6,4,8,9]
+    nums = [1,2,2,4]
     main(nums)
