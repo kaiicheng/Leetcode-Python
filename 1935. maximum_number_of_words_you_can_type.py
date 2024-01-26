@@ -9,3 +9,12 @@ class Solution:
                     wrong += 1
                     break
         return len(text) - wrong
+
+def main(text, brokenLetters):
+    result = Solution()
+    print(result.canBeTypedWords(text, brokenLetters))
+
+if __name__== "__main__" :
+    text = "hello world"
+    brokenLetters = "ad"
+    main(text, brokenLetters)
