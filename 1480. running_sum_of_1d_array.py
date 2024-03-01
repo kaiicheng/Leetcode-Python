@@ -17,5 +17,5 @@ def main(nums):
     print(result.runningSum(nums))
 
 if __name__== "__main__" :
-    nums = [1,1,1,1,1]
+    nums = [1,2,3,4]
     main(nums)
